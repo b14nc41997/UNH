@@ -1,0 +1,254 @@
+prompt --application/pages/page_00004
+begin
+--   Manifest
+--     PAGE: 00004
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.0-17'
+,p_default_workspace_id=>5718571014938602629
+,p_default_application_id=>135115
+,p_default_id_offset=>0
+,p_default_owner=>'WKSP_BIANCA'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>4
+,p_user_interface_id=>wwv_flow_imp.id(6328837428797538360)
+,p_name=>unistr('An\00E1lisis de Casos')
+,p_alias=>unistr('AN\00C1LISIS-DE-CASOS')
+,p_step_title=>unistr('An\00E1lisis de Casos')
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_page_component_map=>'04'
+,p_last_updated_by=>'BIANCA.ROMERO@UNMSM.EDU.PE'
+,p_last_upd_yyyymmddhh24miss=>'20220503021028'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(5892523595323696021)
+,p_plug_name=>unistr('Cantidad de casos por Regi\00F3n del 11/2021 al 04/2022')
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#'
+,p_escape_on_http_output=>'Y'
+,p_plug_template=>wwv_flow_imp.id(6328739487008538321)
+,p_plug_display_sequence=>70
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_source_type=>'NATIVE_JET_CHART'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+);
+wwv_flow_imp_page.create_jet_chart(
+ p_id=>wwv_flow_imp.id(5892523678212696022)
+,p_region_id=>wwv_flow_imp.id(5892523595323696021)
+,p_chart_type=>'area'
+,p_height=>'400'
+,p_animation_on_display=>'auto'
+,p_animation_on_data_change=>'auto'
+,p_orientation=>'vertical'
+,p_data_cursor=>'auto'
+,p_data_cursor_behavior=>'auto'
+,p_hover_behavior=>'dim'
+,p_stack=>'off'
+,p_connect_nulls=>'Y'
+,p_sorting=>'label-asc'
+,p_fill_multi_series_gaps=>true
+,p_zoom_and_scroll=>'off'
+,p_tooltip_rendered=>'Y'
+,p_show_series_name=>true
+,p_show_group_name=>true
+,p_show_value=>true
+,p_legend_rendered=>'off'
+);
+wwv_flow_imp_page.create_jet_chart_series(
+ p_id=>wwv_flow_imp.id(5892523773013696023)
+,p_chart_id=>wwv_flow_imp.id(5892523678212696022)
+,p_seq=>10
+,p_name=>'Nuevo'
+,p_data_source_type=>'TABLE'
+,p_query_table=>'TABLA1'
+,p_include_rowid_column=>false
+,p_series_name_column_name=>unistr('REGI\00D3N')
+,p_items_label_column_name=>'FECHA'
+,p_aggregate_function=>'COUNT'
+,p_line_type=>'auto'
+,p_marker_rendered=>'auto'
+,p_marker_shape=>'auto'
+,p_assigned_to_y2=>'off'
+,p_items_label_rendered=>false
+,p_link_target=>'f?p=&APP_ID.:10:&SESSION.::&DEBUG.::IR_FECHA:\&FECHA.\'
+,p_link_target_type=>'REDIRECT_PAGE'
+);
+wwv_flow_imp_page.create_jet_chart_axis(
+ p_id=>wwv_flow_imp.id(5892523897908696024)
+,p_chart_id=>wwv_flow_imp.id(5892523678212696022)
+,p_axis=>'x'
+,p_is_rendered=>'on'
+,p_format_scaling=>'auto'
+,p_scaling=>'linear'
+,p_baseline_scaling=>'zero'
+,p_major_tick_rendered=>'on'
+,p_minor_tick_rendered=>'off'
+,p_tick_label_rendered=>'on'
+,p_tick_label_rotation=>'auto'
+,p_tick_label_position=>'outside'
+);
+wwv_flow_imp_page.create_jet_chart_axis(
+ p_id=>wwv_flow_imp.id(5892523991670696025)
+,p_chart_id=>wwv_flow_imp.id(5892523678212696022)
+,p_axis=>'y'
+,p_is_rendered=>'on'
+,p_format_type=>'decimal'
+,p_decimal_places=>0
+,p_format_scaling=>'none'
+,p_scaling=>'linear'
+,p_baseline_scaling=>'zero'
+,p_position=>'auto'
+,p_major_tick_rendered=>'on'
+,p_minor_tick_rendered=>'off'
+,p_tick_label_rendered=>'on'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(6329497713510366163)
+,p_plug_name=>unistr('Ruta de Navegaci\00F3n')
+,p_region_template_options=>'#DEFAULT#:t-BreadcrumbRegion--useBreadcrumbTitle'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(6328751851495538325)
+,p_plug_display_sequence=>10
+,p_plug_display_point=>'REGION_POSITION_01'
+,p_menu_id=>wwv_flow_imp.id(6328542202481538286)
+,p_plug_source_type=>'NATIVE_BREADCRUMB'
+,p_menu_template_id=>wwv_flow_imp.id(6328814051254538350)
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(6329601020087366165)
+,p_plug_name=>unistr('Proporci\00F3n de Casos por Region')
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(6328739487008538321)
+,p_plug_display_sequence=>20
+,p_plug_new_grid_row=>false
+,p_plug_source_type=>'NATIVE_JET_CHART'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+);
+wwv_flow_imp_page.create_jet_chart(
+ p_id=>wwv_flow_imp.id(6329601477578366166)
+,p_region_id=>wwv_flow_imp.id(6329601020087366165)
+,p_chart_type=>'pie'
+,p_height=>'400'
+,p_animation_on_display=>'auto'
+,p_animation_on_data_change=>'auto'
+,p_data_cursor=>'auto'
+,p_data_cursor_behavior=>'auto'
+,p_hide_and_show_behavior=>'withRescale'
+,p_hover_behavior=>'dim'
+,p_value_format_type=>'decimal'
+,p_value_decimal_places=>0
+,p_value_format_scaling=>'none'
+,p_tooltip_rendered=>'Y'
+,p_show_series_name=>true
+,p_show_value=>true
+,p_legend_rendered=>'on'
+,p_legend_position=>'auto'
+,p_pie_other_threshold=>0
+,p_pie_selection_effect=>'highlight'
+);
+wwv_flow_imp_page.create_jet_chart_series(
+ p_id=>wwv_flow_imp.id(6329601916417366166)
+,p_chart_id=>wwv_flow_imp.id(6329601477578366166)
+,p_seq=>10
+,p_name=>'Series 1'
+,p_data_source_type=>'TABLE'
+,p_max_row_count=>20
+,p_query_table=>'TABLA1'
+,p_include_rowid_column=>false
+,p_series_name_column_name=>unistr('REGI\00D3N')
+,p_items_label_column_name=>unistr('REGI\00D3N')
+,p_aggregate_function=>'COUNT'
+,p_items_label_rendered=>true
+,p_items_label_position=>'center'
+,p_items_label_display_as=>'ALL'
+,p_link_target=>unistr('f?p=&APP_ID.:10:&SESSION.::&DEBUG.:RR,:IR_REGI\00D3N:\005C&REGI\00D3N.\005C')
+,p_link_target_type=>'REDIRECT_PAGE'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(6329610965604366170)
+,p_plug_name=>'Cantidad de Casos por Edad'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(6328739487008538321)
+,p_plug_display_sequence=>60
+,p_plug_new_grid_row=>false
+,p_plug_source_type=>'NATIVE_JET_CHART'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+);
+wwv_flow_imp_page.create_jet_chart(
+ p_id=>wwv_flow_imp.id(6329611305241366170)
+,p_region_id=>wwv_flow_imp.id(6329610965604366170)
+,p_chart_type=>'bar'
+,p_height=>'400'
+,p_animation_on_display=>'auto'
+,p_animation_on_data_change=>'auto'
+,p_orientation=>'vertical'
+,p_data_cursor=>'auto'
+,p_data_cursor_behavior=>'auto'
+,p_hide_and_show_behavior=>'withRescale'
+,p_hover_behavior=>'dim'
+,p_stack=>'off'
+,p_connect_nulls=>'Y'
+,p_sorting=>'label-asc'
+,p_fill_multi_series_gaps=>true
+,p_zoom_and_scroll=>'off'
+,p_tooltip_rendered=>'Y'
+,p_show_series_name=>true
+,p_show_group_name=>true
+,p_show_value=>true
+,p_legend_rendered=>'on'
+,p_legend_position=>'auto'
+);
+wwv_flow_imp_page.create_jet_chart_series(
+ p_id=>wwv_flow_imp.id(6329611835103366171)
+,p_chart_id=>wwv_flow_imp.id(6329611305241366170)
+,p_seq=>10
+,p_name=>'Series 1'
+,p_data_source_type=>'TABLE'
+,p_max_row_count=>20
+,p_query_table=>'TABLA1'
+,p_include_rowid_column=>false
+,p_series_name_column_name=>'EDAD'
+,p_items_label_column_name=>'EDAD'
+,p_aggregate_function=>'COUNT'
+,p_assigned_to_y2=>'off'
+,p_items_label_rendered=>false
+,p_link_target=>'f?p=&APP_ID.:10:&SESSION.::&DEBUG.:RR,:IR_EDAD:\&EDAD.\'
+,p_link_target_type=>'REDIRECT_PAGE'
+);
+wwv_flow_imp_page.create_jet_chart_axis(
+ p_id=>wwv_flow_imp.id(5892523364999696019)
+,p_chart_id=>wwv_flow_imp.id(6329611305241366170)
+,p_axis=>'x'
+,p_is_rendered=>'on'
+,p_format_scaling=>'auto'
+,p_scaling=>'linear'
+,p_baseline_scaling=>'zero'
+,p_major_tick_rendered=>'on'
+,p_minor_tick_rendered=>'off'
+,p_tick_label_rendered=>'on'
+,p_tick_label_rotation=>'auto'
+,p_tick_label_position=>'outside'
+);
+wwv_flow_imp_page.create_jet_chart_axis(
+ p_id=>wwv_flow_imp.id(5892523435406696020)
+,p_chart_id=>wwv_flow_imp.id(6329611305241366170)
+,p_axis=>'y'
+,p_is_rendered=>'on'
+,p_format_type=>'decimal'
+,p_decimal_places=>0
+,p_format_scaling=>'none'
+,p_scaling=>'linear'
+,p_baseline_scaling=>'zero'
+,p_position=>'auto'
+,p_major_tick_rendered=>'on'
+,p_minor_tick_rendered=>'off'
+,p_tick_label_rendered=>'on'
+);
+wwv_flow_imp.component_end;
+end;
+/
